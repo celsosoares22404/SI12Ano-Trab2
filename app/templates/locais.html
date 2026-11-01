@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guia de Lisboa - Locais a Visitar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='locais.css') }}">
+</head>
+
+<body>
+
+    <h1>Locais Imperdíveis em Lisboa</h1>
+    <p>Descobre os monumentos mais icónicos e os bairros históricos da capital.</p>
+
+    <hr>
+
+    <!-- Menu de Navegação -->
+    <nav>
+        <p>
+            <strong>Navegação:</strong> |
+            <a href="{{ url_for('index') }}">Início</a> |
+            <b>Locais a Visitar</b> |
+            <a href="{{ url_for('gastronomia') }}">Gastronomia Típica</a> |
+        </p>
+    </nav>
+
+    <hr>
+
+    <h2>Principais Atrações e Monumentos</h2>
+
+    <!-- 1. Torre de Belém -->
+    <h3>1. Torre de Belém</h3>
+    <p>Construída no século XVI às margens do Rio Tejo, a Torre de Belém é um dos monumentos mais emblemáticos do estilo
+        manuelino e simboliza a era das navegações portuguesas.</p>
+
+    <a href="https://pt.wikipedia.org/wiki/Torre_de_Bel%C3%A9m" target="_blank">
+        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Bel%C3%A9m_Tower_in_Lisbon%2C_Portugal.jpg/330px-Bel%C3%A9m_Tower_in_Lisbon%2C_Portugal.jpg?utm_source=pt.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+            alt="Torre de Belém" width="300">
+    </a>
+    <p><small>(Clica na imagem para saber mais sobre a Torre de Belém)</small></p>
+
+    <!-- 2. Castelo de São Jorge -->
+    <h3>2. Castelo de São Jorge</h3>
+    <p>Localizado numa das colinas mais altas de Lisboa, este castelo medieval oferece uma vista panorâmica incrível
+        sobre toda a cidade e o Rio Tejo.</p>
+
+    <a href="https://pt.wikipedia.org/wiki/Castelo_de_S%C3%A3o_Jorge" target="_blank">
+        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Castelo_de_S%C3%A3o_Jorge_%2810251035013%29.jpg/330px-Castelo_de_S%C3%A3o_Jorge_%2810251035013%29.jpg?utm_source=pt.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+            alt="Vista do Castelo de São Jorge" width="300">
+    </a>
+    <p><small>(Clica na imagem para saber mais sobre o Castelo de São Jorge)</small></p>
+
+    <!-- 3. Bairro da Alfama -->
+    <h3>3. Bairro da Alfama</h3>
+    <p>O bairro mais antigo de Lisboa, famoso pelas ruas estreitas, varandas com roupa a secar e pelo som do Fado a
+        ecoar pelas tavernas.</p>
+
+    <a href="https://pt.wikipedia.org/wiki/Alfama" target="_blank">
+        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Alfama%2C_Lisboa_-_2010-09-09.jpg/250px-Alfama%2C_Lisboa_-_2010-09-09.jpg?utm_source=pt.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+            alt="Ruas do Bairro da Alfama" width="300">
+    </a>
+    <p><small>(Clica na imagem para saber mais sobre o Bairro da Alfama)</small></p>
+
+    <hr>
+
+    <h2>Onde Fica o Centro Histórico?</h2>
+    <p>Localização de Belém no mapa de Lisboa:</p>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.8402434057813!2d-9.2057398!3d38.6974776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ecc2c6381005b%3A0xb3a82d2f2d9c39bf!2sPast%C3%A9is%20de%20Bel%C3%A9m!5e0!3m2!1spt-PT!2spt!4v1610000000000!5m2!1spt-PT!2spt"
+        width="450" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+
+    <hr>
+
+    <a href="{{ url_for('index') }}">← Voltar à Página Principal</a> |
+    <a href="{{ url_for('gastronomia') }}">Ir para a Gastronomia →</a>
+
+</body>
+
+</html>

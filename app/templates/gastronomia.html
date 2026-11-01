@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guia de Lisboa - Gastronomia Típica</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='gastronomia.css') }}">
+</head>
+
+<body>
+
+    <h1>A Gastronomia de Lisboa</h1>
+    <p>A culinária lisboeta combina o melhor do peixe fresco atlántico com a doçaria conventual rica em ovos e açúcar.
+    </p>
+
+    <hr>
+
+    <!-- Menu de Navegação -->
+    <nav>
+        <p>
+            <strong>Navegação:</strong> |
+            <a href="{{ url_for('index') }}">Início</a> |
+            <a href="{{ url_for('locais') }}">Locais a Visitar</a> |
+            <b>Gastronomia Típica</b> |
+        </p>
+    </nav>
+
+    <hr>
+
+    <h2>Pratos e Doces Emblemáticos</h2>
+
+    <!-- 1. Pastel de Nata -->
+    <h3>1. Pastéis de Nata</h3>
+    <p>Criados no início do século XIX pelos monges do Mosteiro dos Jerónimos, em Belém, estes pastéis crocantes são
+        servidos mornos e polvilhados com canela.</p>
+
+    <a href="https://pt.wikipedia.org/wiki/Pastel_de_nata" target="_blank">
+        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Pastel_de_nata_%2818616473070%29.jpg/250px-Pastel_de_nata_%2818616473070%29.jpg?utm_source=pt.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+            alt="Pastel de Nata" width="300">
+    </a>
+    <p><small>(Clica na imagem para saber mais sobre a história do Pastel de Nata)</small></p>
+
+    <!-- 2. Bacalhau à Brás -->
+    <h3>2. Bacalhau à Brás</h3>
+    <p>Inventado num restaurante do Bairro Alto, consiste em bacalhau desfiado misturado com batata palha fina, ovos
+        mexidos, azeitonas e salsa.</p>
+
+    <a href="https://pt.wikipedia.org/wiki/Bacalhau_%C3%A0_Br%C3%A1s" target="_blank">
+        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Bacalhau_a_Bras.jpg/250px-Bacalhau_a_Bras.jpg?utm_source=pt.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+            alt="Prato de Peixe e Bacalhau" width="300">
+    </a>
+    <p><small>(Clica na imagem para ler mais sobre o Bacalhau à Brás)</small></p>
+
+    <!-- 3. Sardinhas Assadas -->
+    <h3>3. Sardinhas Assadas</h3>
+    <p>Em junho, durante as Festas de Santo António, o aroma das sardinhas assadas na brasa invade todas as ruas dos
+        bairros típicos.</p>
+
+    <a href="https://pt.wikipedia.org/wiki/Sardinha_assada" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Grilled_Sardines_5.50%E2%82%AC_Marisqueira_O_Varino_Nazar%C3%A9_%283785526688%29.jpg?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original"
+            alt="Prato de Sardinhas Assadas" width="300">
+    </a>
+    <p><small>(Clica na imagem para saber mais sobre as Sardinhas Assadas)</small></p>
+
+    <hr>
+
+    <h2>Guia de Restaurantes</h2>
+    <table border="1" cellpadding="8">
+        <thead>
+            <tr>
+                <th>Zona / Bairro</th>
+                <th>Especialidade</th>
+                <th>Tipo de Ambiente</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Belém</td>
+                <td>Pastéis de Nata</td>
+                <td>Café histórico</td>
+                <td>€</td>
+            </tr>
+            <tr>
+                <td>Alfama</td>
+                <td>Bacalhau e Fado</td>
+                <td>Taverna tradicional</td>
+                <td>€€</td>
+            </tr>
+            <tr>
+                <td>Cais do Sodré</td>
+                <td>Peixe Fresco e Marisco</td>
+                <td>Mercado moderno</td>
+                <td>€€ - €€€</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Vídeo: Receita do Pastel de Nata</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/D7qo84QYQoI?si=LoytRjrw6ZUIwNPx"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+
+    <hr>
+
+    <a href="{{ url_for('index') }}">← Voltar à Página Principal</a> |
+    <a href="{{ url_for('locais') }}">Voltar aos Locais a Visitar</a>
+
+</body>
+
+</html>
