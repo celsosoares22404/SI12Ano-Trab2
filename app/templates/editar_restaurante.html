@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Restaurante - Guia de Lisboa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='gastronomia.css') }}">
+</head>
+
+<body>
+
+    <h1>Editar Restaurante</h1>
+    <p>Altera os dados do restaurante selecionado e clica em guardar.</p>
+
+    <hr>
+
+    <form method="POST">
+        <p>
+            <label><strong>Nome:</strong></label><br>
+            <input type="text" name="nome" value="{{ restaurante.nome }}" required>
+        </p>
+        <p>
+            <label><strong>Zona:</strong></label><br>
+            <input type="text" name="zona" value="{{ restaurante.zona }}" required>
+        </p>
+        <p>
+            <label><strong>Especialidade:</strong></label><br>
+            <input type="text" name="especialidade" value="{{ restaurante.especialidade }}" required>
+        </p>
+        <p>
+            <label><strong>Gama de Preço:</strong></label><br>
+            <select name="preco" required>
+                <option value="Barato" {% if restaurante.preco == 'Barato' %}selected{% endif %}>Barato</option>
+                <option value="Médio" {% if restaurante.preco == 'Médio' %}selected{% endif %}>Médio</option>
+                <option value="Caro" {% if restaurante.preco == 'Caro' %}selected{% endif %}>Caro</option>
+            </select>
+        </p>
+        <button type="submit">Guardar Alterações</button>
+        <a href="{{ url_for('restaurantes') }}">Cancelar</a>
+    </form>
+
+</body>
+
+</html>

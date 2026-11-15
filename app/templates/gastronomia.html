@@ -22,6 +22,7 @@
             <a href="{{ url_for('index') }}">Início</a> |
             <a href="{{ url_for('locais') }}">Locais a Visitar</a> |
             <b>Gastronomia Típica</b> |
+            <a href="{{ url_for('restaurantes') }}">Restaurantes</a> |
         </p>
     </nav>
 
@@ -68,31 +69,25 @@
     <table border="1" cellpadding="8">
         <thead>
             <tr>
-                <th>Zona / Bairro</th>
+                <th>Nome</th>
+                <th>Zona</th>
                 <th>Especialidade</th>
-                <th>Tipo de Ambiente</th>
-                <th>Preço</th>
+                <th>Gama de Preço</th>
             </tr>
         </thead>
         <tbody>
+            {% for r in restaurantes %}
             <tr>
-                <td>Belém</td>
-                <td>Pastéis de Nata</td>
-                <td>Café histórico</td>
-                <td>€</td>
+                <td>{{ r.nome }}</td>
+                <td>{{ r.zona }}</td>
+                <td>{{ r.especialidade }}</td>
+                <td>{{ r.preco }}</td>
             </tr>
+            {% else %}
             <tr>
-                <td>Alfama</td>
-                <td>Bacalhau e Fado</td>
-                <td>Taverna tradicional</td>
-                <td>€€</td>
+                <td colspan="4">Ainda não existem restaurantes registados.</td>
             </tr>
-            <tr>
-                <td>Cais do Sodré</td>
-                <td>Peixe Fresco e Marisco</td>
-                <td>Mercado moderno</td>
-                <td>€€ - €€€</td>
-            </tr>
+            {% endfor %}
         </tbody>
     </table>
 

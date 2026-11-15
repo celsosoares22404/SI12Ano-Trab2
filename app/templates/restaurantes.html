@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guia de Lisboa - Restaurantes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='gastronomia.css') }}">
+</head>
+
+<body>
+
+    <h1>Gestão de Restaurantes</h1>
+    <p>Adiciona e consulta os restaurantes típicos de Lisboa guardados na base de dados.</p>
+
+    <hr>
+
+    <!-- Menu de Navegação -->
+    <nav>
+        <p>
+            <strong>Navegação:</strong> |
+            <a href="{{ url_for('index') }}">Início</a> |
+            <a href="{{ url_for('locais') }}">Locais a Visitar</a> |
+            <a href="{{ url_for('gastronomia') }}">Gastronomia Típica</a> |
+            <b>Restaurantes</b> |
+        </p>
+    </nav>
+
+    <hr>
+
+    <h2>Adicionar Novo Restaurante</h2>
+    <form method="POST">
+        <p>
+            <label><strong>Nome:</strong></label><br>
+            <input type="text" name="nome" placeholder="Ex: Ramiro" required>
+        </p>
+        <p>
+            <label><strong>Zona:</strong></label><br>
+            <input type="text" name="zona" placeholder="Ex: Intendente / Almirante Reis" required>
+        </p>
+        <p>
+            <label><strong>Especialidade:</strong></label><br>
+            <input type="text" name="especialidade" placeholder="Ex: Marisco e Prego no Pão" required>
+        </p>
+        <p>
+            <label><strong>Gama de Preço:</strong></label><br>
+            <select name="preco" required>
+                <option value="Barato">Barato</option>
+                <option value="Médio">Médio</option>
+                <option value="Caro">Caro</option>
+            </select>
+        </p>
+        <button type="submit">Guardar Restaurante</button>
+    </form>
+
+    <hr>
+
+    <h2>Lista de Restaurantes na Base de Dados</h2>
+    <table border="1" cellpadding="8">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Zona</th>
+                <th>Especialidade</th>
+                <th>Gama de Preço</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in restaurantes %}
+            <tr>
+                <td>{{ r.nome }}</td>
+                <td>{{ r.zona }}</td>
+                <td>{{ r.especialidade }}</td>
+                <td>{{ r.preco }}</td>
+                <td>
+                    <a href="{{ url_for('editar_restaurante', id=r.id) }}">
+                        <button type="button">Editar</button>
+                    </a>
+                    <form action="{{ url_for('apagar_restaurante', id=r.id) }}" method="POST" style="display:inline;">
+                        <button type="submit">Apagar</button>
+                    </form>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="5">Ainda não existem restaurantes registados.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <hr>
+
+    <a href="{{ url_for('index') }}">← Voltar à Página Principal</a>
+
+</body>
+
+</html>
