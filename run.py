@@ -1,6 +1,6 @@
 from app import app, db
 
-# Cria as tabelas na base de dados SQLite se ainda não existirem
+# Cria as tabelas na base de dados configurada se ainda não existirem
 with app.app_context():
     db.create_all()
 
